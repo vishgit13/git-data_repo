@@ -1,0 +1,1 @@
+select * from  devcatalog1.default.customer1
