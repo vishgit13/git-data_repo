@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: one unique customer per row
+    columns:
+      - name: customer_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: state
+        description: "{{ doc('state') }}"
+        tests:
+          - accepted_values:
+              values: ['FL', 'NY', 'TX', 'CA', 'IL']
+
+
+
+  - name: stg_product
+    description: one order per row
+    columns:
+      - name: order_id
+        description: primary key
+        tests:
+          - unique
+          - not_null

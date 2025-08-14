@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: devcatalog1
+    database: devcatalog1     # change to prodcatalog in prod env connection
+    schema: default
+    loader: databricks
+    tables:
+      - name: customer1
+        identifier: customer1
+        description: Raw customers
+      - name: product
+        identifier: product
+        description: Raw products
+        columns:
+          - name: product_id
+            tests: [not_null, unique]
+          - name: customer_id
+            tests: [not_null]
