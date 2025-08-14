@@ -11,9 +11,9 @@ source_customer as (
 joined_custpro as (
     select
         c.customer_id,
-        c.full_name,
+        c.name,
         c.email,
-        c.created_at,
+        c.signup_date,
         c.address,
         c.state,
         c.total_amount,
